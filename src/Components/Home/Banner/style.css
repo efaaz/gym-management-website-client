@@ -1,0 +1,22 @@
+/* Banner.css */
+.custom-hero-height {
+    height: 85vh; /* Change this value to whatever custom height you need */
+  }
+  
+  .custom-hero-overlay {
+    height: 85vh; /* Ensure overlay matches hero height */
+    
+  }
+
+
+  .hero-content-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 2rem; /* Add padding as needed */
+  }
+  
+  .hero-content-left .max-w-max {
+    max-width: none;
+  }
