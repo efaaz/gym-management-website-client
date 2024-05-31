@@ -25,19 +25,19 @@ function Navbar() {
         </NavLink>
       </li>
       <li>
-            <NavLink
-              to="/all-trainer"
-              className={({ isActive }) =>
-                `mx-2 text-lg  ${
-                  isActive
-                    ? " text-[#981840] font-bold"
-                    : "text-gray-400 font-normal"
-                }`
-              }
-            >
-              All Trainer
-            </NavLink>
-          </li>
+        <NavLink
+          to="/all-trainer"
+          className={({ isActive }) =>
+            `mx-2 text-lg  ${
+              isActive
+                ? " text-[#981840] font-bold"
+                : "text-gray-400 font-normal"
+            }`
+          }
+        >
+          All Trainer
+        </NavLink>
+      </li>
       <div className="dropdown dropdown-hover">
         <div
           tabIndex={0}
@@ -52,7 +52,6 @@ function Navbar() {
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
-          
           <li>
             <NavLink
               to="/manage-service"
@@ -90,9 +89,7 @@ function Navbar() {
           to="/all-classes"
           className={({ isActive }) =>
             `mx-2 text-lg ${
-              isActive
-                ? " text-[#981840] font-bold"
-                : "text-gray-400"
+              isActive ? " text-[#981840] font-bold" : "text-gray-400"
             }`
           }
         >
@@ -104,9 +101,7 @@ function Navbar() {
           to="/services"
           className={({ isActive }) =>
             `mx-2 text-lg ${
-              isActive
-                ? "text-[#981840] font-semibold"
-                : "text-gray-400"
+              isActive ? "text-[#981840] font-semibold" : "text-gray-400"
             }`
           }
         >
@@ -179,7 +174,7 @@ function Navbar() {
                       <img
                         alt="user img"
                         src={user.photoURL}
-                        className="rounded-full border-2 border-info"
+                        className="rounded-full"
                       />
                       <Tooltip id="my-tooltip" />
                     </div>
@@ -189,16 +184,13 @@ function Navbar() {
               {user ? (
                 <button
                   onClick={logOut}
-                  className="btn rounded-full btn-info text-white"
+                  className="btn border border-[#981840]"
                 >
                   Sign Out
                 </button>
               ) : (
                 <>
-                  <Link
-                    to="/Sign-in"
-                    className="btn rounded-full btn-success lg:text-base text-sm mr-2 text-white"
-                  >
+                  <Link to="/Sign-in" className="btn border border-[#981840]">
                     Log in
                   </Link>
                 </>
