@@ -1,8 +1,13 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+    <Helmet>
+        <title>Aura Fitness | Home</title>
+    </Helmet>
+    Home</>
   )
 }
 
