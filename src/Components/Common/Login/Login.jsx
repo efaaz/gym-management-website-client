@@ -76,7 +76,7 @@ function Login() {
       <div className="container flex flex-col mx-auto my-2">
         <div className="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
           <div className="flex items-center justify-center w-full lg:p-12">
-            <div className="flex items-center xl:p-10">
+            <div className="flex items-center xl:p-10 rounded-lg shadow border-[#981840] border border-rou" >
               <form
                 className="flex flex-col w-full h-full pb-6 text-center rounded-3xl"
                 onSubmit={handleSubmit(login)}
