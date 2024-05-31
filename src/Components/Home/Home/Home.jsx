@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import Banner from '../Banner/Banner'
 
 function Home() {
   return (
@@ -7,7 +8,10 @@ function Home() {
     <Helmet>
         <title>Aura Fitness | Home</title>
     </Helmet>
-    Home</>
+    <Banner></Banner>
+    
+    
+    </>
   )
 }
 
