@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -74,7 +73,7 @@ function Register() {
       <ToastContainer />
       <section className="">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full rounded-lg shadow border border-[#981840] md:mt-0 sm:max-w-md xl:p-0 bg-[#9818411e]">
             <div className="p-6 space-y-2 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Create an account
@@ -163,7 +162,7 @@ function Register() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-500 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="w-full bg-[#981840] text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Create an account
                 </button>
