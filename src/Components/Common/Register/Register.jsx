@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 function Register() {
   const axiosPublic = useAxiosPublic();
-  const { signUp, updateProfile, logOut, user } = useContext(AuthContext);
+  const { signUp, updateProfile, logOut } = useContext(AuthContext);
   const {
     reset,
     register,
@@ -39,19 +39,18 @@ function Register() {
       return;
     }
 
-    // Use then-catch approach for promise handling
     signUp(data.Email, data.Password)
       .then((userCredential) => {
-        console.log(data);
+        // console.log(data);
         const email = userCredential.user?.email;
         const userInfo = {
           name: data.Name,
           email: email,
         };
-        console.log(userInfo);
+        // console.log(userInfo);
         axiosPublic.post("/users", userInfo).then((res) => {
           if (res.data.insertedId) {
-            console.log("user added to the database");
+            // console.log("user added to the database");
             reset();
             Swal.fire({
               position: "top-end",
@@ -65,7 +64,7 @@ function Register() {
         });
         // Update profile after successful signup
         return updateProfile(data.Name, data.PhotoURL).then(() => {
-          // Optional: Logging out after profile update
+          // Logging out after profile update
           logOut();
         });
       })
@@ -73,13 +72,11 @@ function Register() {
       .catch((err) => {
         setError(err.message);
       });
-
-    // Note that `user` may be undefined due to asynchronous nature
   };
   return (
     <>
       <Helmet>
-        <title>ServiceSphere | Register</title>
+        <title>Aura Fitness | Register</title>
       </Helmet>
       <section className="">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">

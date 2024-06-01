@@ -1,22 +1,19 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 function Login() {
-  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { signIn, googleSignin, setLoading } = useContext(AuthContext);
-
-  const location = useLocation();
+  const { signIn, googleSignin } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const login = (data) => {
@@ -38,34 +35,15 @@ function Login() {
       })
 
       .catch((error) => {
-        setError(error.message);
-        toast("Invalid user credential");
+        toast(`Invalid user credential: ${error.message}`);
       });
   };
 
   const handleGoogleSignin = (event) => {
     setError("");
     googleSignin()
-      .then((userCredential) => {
+      .then(() => {
         // console.log(userCredential);
-        const email = userCredential.user?.email;
-        const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
-        const creationTime = userCredential.user?.metadata?.creationTime;
-        const userInfo = {
-          email: email,
-          creationTime: creationTime,
-          lastLoggedAt: lastLoggedAt,
-        };
-        // console.log(userInfo);
-        axios
-          .put("https://service-site-five.vercel.app/api/user", userInfo)
-          .then((data) => {
-            // console.log(data);
-            navigate(location?.state?.from?.pathname || "/");
-          })
-          .catch((err) => {
-            console.log(err);
-          });
       })
       .catch((error) => {
         setError(error.message);
@@ -74,6 +52,10 @@ function Login() {
   };
   return (
     <>
+      <Helmet>
+        <title>Aura Fitness | Sign in</title>
+      </Helmet>
+      <ToastContainer />
       <div className="container flex flex-col mx-auto my-2">
         <div className="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
           <div className="flex items-center justify-center w-full lg:p-12">
