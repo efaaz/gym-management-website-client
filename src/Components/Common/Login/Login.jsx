@@ -17,11 +17,8 @@ function Login() {
   const navigate = useNavigate();
 
   const login = (data) => {
-    setError("");
     signIn(data.Email, data.Password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
         Swal.fire({
           title: "User Login Successful.",
           showClass: {
@@ -40,14 +37,12 @@ function Login() {
   };
 
   const handleGoogleSignin = (event) => {
-    setError("");
     googleSignin()
       .then(() => {
         // console.log(userCredential);
       })
       .catch((error) => {
-        setError(error.message);
-        toast("Invalid user credential");
+        toast(`Invalid user credential: ${error.message}`);
       });
   };
   return (
