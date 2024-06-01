@@ -11,10 +11,12 @@ import {
 } from "firebase/auth";
 import axios from "axios";
 import { auth } from "../Firebase/firebase.config";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 export const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
+  const axiosPublic = useAxiosPublic();
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
@@ -66,26 +68,19 @@ function AuthProvider({ children }) {
       const loggedUser = { email: userEmail };
       setUser(currentUser);
       if (currentUser) {
-        axios
-          .post(
-            "https://service-site-five.vercel.app/api/user/jwt",
-            loggedUser,
-            { withCredentials: true }
-          )
-          .then((response) => {
-            //   console.log('Token responce', response.data);
-          });
-      } else {
-        axios
-          .post(
-            "https://service-site-five.vercel.app/api/user/logout",
-            loggedUser,
-            { withCredentials: true }
-          )
-          .then((response) => {
-            //   console.log(response.data);
-          });
-      }
+        // get token and store client
+        const userInfo = { email: currentUser.email };
+        axiosPublic.post('/jwt', userInfo)
+            .then(res => {
+                if (res.data.token) {
+                    localStorage.setItem('access-token', res.data.token);
+                }
+            })
+    }
+    else {
+        // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+        localStorage.removeItem('access-token');
+    }
       setLoading(false);
     });
 

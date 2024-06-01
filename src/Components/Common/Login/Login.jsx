@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { AuthContext } from "../../../Contexts/AuthProvider";
+import Swal from "sweetalert2";
 
 function Login() {
   const [error, setError] = useState("");
@@ -13,8 +14,7 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { signIn, googleSignin, setLoading } = useContext(AuthContext
-  );
+  const { signIn, googleSignin, setLoading } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -22,20 +22,21 @@ function Login() {
   const login = (data) => {
     setError("");
     signIn(data.Email, data.Password)
-      .then((userCredential) => {
-        const email = userCredential.user?.email;
-        const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
-        const userInfo = { email, lastLoggedAt: lastLoggedAt };
-        // console.log(userInfo);
-        axios
-          .patch("https://service-site-five.vercel.app/api/user", userInfo)
-          .then((data) => {
-            navigate(location?.state?.from?.pathname || "/");
-          })
-          .catch((err) => {
-            // console.log(err);
-          });
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          title: "User Login Successful.",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+        navigate("/");
       })
+
       .catch((error) => {
         setError(error.message);
         toast("Invalid user credential");
@@ -76,7 +77,7 @@ function Login() {
       <div className="container flex flex-col mx-auto my-2">
         <div className="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
           <div className="flex items-center justify-center w-full lg:p-12">
-            <div className="flex items-center xl:p-10 rounded-lg shadow border-[#981840] border border-rou" >
+            <div className="flex items-center xl:p-10 rounded-lg shadow border-[#981840] border border-rou">
               <form
                 className="flex flex-col w-full h-full pb-6 text-center rounded-3xl"
                 onSubmit={handleSubmit(login)}

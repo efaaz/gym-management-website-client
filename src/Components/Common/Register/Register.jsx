@@ -1,21 +1,24 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../../Contexts/AuthProvider";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 function Register() {
+  const axiosPublic = useAxiosPublic();
   const { signUp, updateProfile, logOut, user } = useContext(AuthContext);
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   function validatePassword(password) {
     const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -39,26 +42,34 @@ function Register() {
     // Use then-catch approach for promise handling
     signUp(data.Email, data.Password)
       .then((userCredential) => {
-        const createdAt = userCredential.user?.metadata?.creationTime;
+        console.log(data);
         const email = userCredential.user?.email;
-        const userInfo = { email, createdAt: createdAt };
-        axios
-          .post("https://service-site-five.vercel.app/api/user", userInfo)
-          .then((data) => {
-            // console.log(data);
-            if (data.insertedId) {
-              //   console.log("user added to the database");
-            }
-          });
+        const userInfo = {
+          name: data.Name,
+          email: email,
+        };
+        console.log(userInfo);
+        axiosPublic.post("/users", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            console.log("user added to the database");
+            reset();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 2000,
+            });
+            navigate("/sign-in");
+          }
+        });
         // Update profile after successful signup
         return updateProfile(data.Name, data.PhotoURL).then(() => {
           // Optional: Logging out after profile update
           logOut();
         });
       })
-      .then(() => {
-        toast("Sign-up successful");
-      })
+      .then()
       .catch((err) => {
         setError(err.message);
       });
@@ -70,7 +81,6 @@ function Register() {
       <Helmet>
         <title>ServiceSphere | Register</title>
       </Helmet>
-      <ToastContainer />
       <section className="">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full rounded-lg shadow border border-[#981840] md:mt-0 sm:max-w-md xl:p-0 bg-[#9818411e]">
