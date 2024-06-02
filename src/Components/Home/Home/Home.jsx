@@ -4,6 +4,10 @@ import Banner from '../Banner/Banner'
 import FeatureSection from '../FeaturedSection/FeatureSection'
 import AboutSection from '../AboutSection/AboutSection'
 import FeaturedClasses from '../FeaturedClasses/FeaturedClasses'
+import ReviewCard from '../ReviewCard/ReviewCard'
+import ReviewSlider from '../ReviewSlider/ReviewSlider'
+import LatestCommunityPosts from '../LatestCommunityPosts/LatestCommunityPosts'
+import NewsLetter from '../NewsLetter/NewsLetter'
 
 function Home() {
   return (
@@ -15,7 +19,9 @@ function Home() {
     <FeatureSection></FeatureSection>
     <AboutSection></AboutSection>
     <FeaturedClasses></FeaturedClasses>
-    
+    <ReviewSlider></ReviewSlider>
+    <LatestCommunityPosts></LatestCommunityPosts>
+    <NewsLetter></NewsLetter>
     </>
   )
 }
