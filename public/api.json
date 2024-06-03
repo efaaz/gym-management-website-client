@@ -1,0 +1,143 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "photo": "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 10,
+      "social": {
+        "facebook": "https://facebook.com/john",
+        "twitter": "https://twitter.com/john",
+        "instagram": "https://instagram.com/john"
+      },
+      "availableSlots": "Mon-Fri, 9am-5pm",
+      "bio": "John is a certified personal trainer with over 10 years of experience in the fitness industry. He specializes in strength training and conditioning.",
+      "expertise": "Strength Training, Conditioning"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "photo": "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 8,
+      "social": {
+        "facebook": "https://facebook.com/jane",
+        "twitter": "https://twitter.com/jane",
+        "instagram": "https://instagram.com/jane"
+      },
+      "availableSlots": "Tue-Thu, 10am-4pm",
+      "bio": "Jane is a yoga instructor and nutrition coach. She has been helping clients achieve their health goals through personalized yoga sessions and nutrition plans.",
+      "expertise": "Yoga, Nutrition"
+    },
+    {
+      "id": 3,
+      "name": "Mark Johnson",
+      "photo": "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 7,
+      "social": {
+        "facebook": "https://facebook.com/mark",
+        "twitter": "https://twitter.com/mark",
+        "instagram": "https://instagram.com/mark"
+      },
+      "availableSlots": "Mon-Fri, 8am-2pm",
+      "bio": "Mark is a professional fitness coach who focuses on cardiovascular training and endurance building. He has worked with numerous athletes to enhance their performance.",
+      "expertise": "Cardiovascular Training, Endurance"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "photo": "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 6,
+      "social": {
+        "facebook": "https://facebook.com/emily",
+        "twitter": "https://twitter.com/emily",
+        "instagram": "https://instagram.com/emily"
+      },
+      "availableSlots": "Mon-Wed, 12pm-6pm",
+      "bio": "Emily is a Pilates instructor with a passion for helping clients improve their flexibility and core strength.",
+      "expertise": "Pilates, Flexibility"
+    },
+    {
+      "id": 5,
+      "name": "Michael Brown",
+      "photo": "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 9,
+      "social": {
+        "facebook": "https://facebook.com/michael",
+        "twitter": "https://twitter.com/michael",
+        "instagram": "https://instagram.com/michael"
+      },
+      "availableSlots": "Wed-Fri, 1pm-7pm",
+      "bio": "Michael is a strength and conditioning coach with a background in sports science. He helps athletes reach their peak performance.",
+      "expertise": "Strength and Conditioning, Sports Science"
+    },
+    {
+      "id": 6,
+      "name": "Laura Wilson",
+      "photo": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 5,
+      "social": {
+        "facebook": "https://facebook.com/laura",
+        "twitter": "https://twitter.com/laura",
+        "instagram": "https://instagram.com/laura"
+      },
+      "availableSlots": "Mon, Wed, Fri, 9am-3pm",
+      "bio": "Laura is a certified nutritionist and fitness coach who focuses on holistic health and wellness.",
+      "expertise": "Nutrition, Wellness"
+    },
+    {
+      "id": 7,
+      "name": "David Martinez",
+      "photo": "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 4,
+      "social": {
+        "facebook": "https://facebook.com/david",
+        "twitter": "https://twitter.com/david",
+        "instagram": "https://instagram.com/david"
+      },
+      "availableSlots": "Tue-Thu, 11am-5pm",
+      "bio": "David is a personal trainer with a focus on weight loss and muscle building. He has helped numerous clients achieve their fitness goals.",
+      "expertise": "Weight Loss, Muscle Building"
+    },
+    {
+      "id": 8,
+      "name": "Sarah Thompson",
+      "photo": "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 3,
+      "social": {
+        "facebook": "https://facebook.com/sarah",
+        "twitter": "https://twitter.com/sarah",
+        "instagram": "https://instagram.com/sarah"
+      },
+      "availableSlots": "Mon-Fri, 10am-4pm",
+      "bio": "Sarah is a dance fitness instructor who combines dance and fitness to create fun and effective workouts.",
+      "expertise": "Dance Fitness, Aerobics"
+    },
+    {
+      "id": 9,
+      "name": "Chris Lee",
+      "photo": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 2,
+      "social": {
+        "facebook": "https://facebook.com/chris",
+        "twitter": "https://twitter.com/chris",
+        "instagram": "https://instagram.com/chris"
+      },
+      "availableSlots": "Mon-Wed, 1pm-6pm",
+      "bio": "Chris is a beginner-friendly fitness trainer who focuses on making fitness accessible to everyone.",
+      "expertise": "Beginner Fitness, Accessibility"
+    },
+    {
+      "id": 10,
+      "name": "Jessica Green",
+      "photo": "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "experience": 6,
+      "social": {
+        "facebook": "https://facebook.com/jessica",
+        "twitter": "https://twitter.com/jessica",
+        "instagram": "https://instagram.com/jessica"
+      },
+      "availableSlots": "Tue-Thu, 9am-2pm",
+      "bio": "Jessica is a certified fitness coach with a focus on functional training and injury prevention.",
+      "expertise": "Functional Training, Injury Prevention"
+    }
+  ]
+  
