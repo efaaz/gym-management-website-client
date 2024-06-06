@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-import { FaSquarespace } from "react-icons/fa6";
 import DotSpinner from "../Loading/DotSpinner";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 
@@ -38,52 +37,15 @@ function Navbar() {
           All Trainer
         </NavLink>
       </li>
-      <div className="dropdown dropdown-hover">
-        <div
-          tabIndex={0}
-          role="button"
-          className={`shadow-lg px-4 py-1 border-x text-lg m-1 border-b-4 border-[#981840] rounded-3xl font-semibold ${
-            true ? "block" : "hidden"
-          } `}
+      <li>
+        <NavLink
+          to="/dashboard"
+          className="shadow-lg px-4 py-1 border-x text-lg m-1 border-b-4 border-[#981840] rounded-3xl font-semibold"
         >
           Dashboard
-        </div>
-        <ul
-          tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          <li>
-            <NavLink
-              to="/manage-service"
-              className={({ isActive }) =>
-                `${isActive ? "border border-green-500 font-semibold" : ""} `
-              }
-            >
-              Manage Service
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/booked-services"
-              className={({ isActive }) =>
-                `${isActive ? "border border-green-500 font-semibold" : ""} `
-              }
-            >
-              Booked Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/service-to-do"
-              className={({ isActive }) =>
-                `${isActive ? "border border-green-500 font-semibold" : ""} `
-              }
-            >
-              Service To Do
-            </NavLink>
-          </li>
-        </ul>
-      </div>
+        </NavLink>
+      </li>
+
       <li>
         <NavLink
           to="/all-classes"

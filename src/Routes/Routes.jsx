@@ -4,6 +4,8 @@ import Layout from "../Layout/Layout";
 import Error from "../ErrorPage/Error";
 import Login from "../Components/Common/Login/Login";
 import Register from "../Components/Common/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -25,4 +27,18 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: 'dashboard',
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children: [
+      
+
+      // admin routes
+      // {
+      //   path: 'users',
+      //   element: <AllUsers></AllUsers>
+      // }
+
+    ]
+  }
 ]);

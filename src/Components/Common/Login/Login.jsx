@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 function Login() {
   const {
@@ -36,14 +37,37 @@ function Login() {
       });
   };
 
-  const handleGoogleSignin = (event) => {
-    googleSignin()
-      .then(() => {
-        // console.log(userCredential);
-      })
-      .catch((error) => {
-        toast(`Invalid user credential: ${error.message}`);
-      });
+  const handleGoogleSignin = async () => {
+    try {
+      const result = await googleSignin();
+      const user = result.user;
+      const userInfo = {
+        name: user.displayName,
+        email: user.email,
+        role: "member", // Default role for new users
+      };
+
+      // Send user information to your backend
+      const response = await axios.post(
+        "http://localhost:5000/users",
+        userInfo
+      );
+
+      if (response.data.insertedId) {
+        Swal.fire({
+          title: "User Login Successful.",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+        navigate("/");
+      }
+    } catch (error) {
+      toast(`Invalid user credential: ${error.message}`);
+    }
   };
   return (
     <>

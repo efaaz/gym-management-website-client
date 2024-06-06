@@ -9,7 +9,6 @@ import {
   GithubAuthProvider,
   updateProfile as updateProfileFirebase,
 } from "firebase/auth";
-import axios from "axios";
 import { auth } from "../Firebase/firebase.config";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 
@@ -17,7 +16,7 @@ export const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
   const axiosPublic = useAxiosPublic();
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
   const GitHubProvider = new GithubAuthProvider();
@@ -32,9 +31,13 @@ function AuthProvider({ children }) {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const logOut = () => {
+  const logOut = async () => {
     setLoading(true);
-    return signOut(auth);
+    return signOut(auth).then(() => {
+      localStorage.removeItem('access-token');
+      setUser(null);
+      setLoading(false);
+    });
   };
 
   const googleSignin = () => {
@@ -49,7 +52,6 @@ function AuthProvider({ children }) {
     setLoading(true);
     try {
       await updateProfileFirebase(auth.currentUser, { displayName, photoURL });
-      // Update the local user object
       setUser((prevUser) => ({
         ...prevUser,
         displayName,
@@ -63,29 +65,28 @@ function AuthProvider({ children }) {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      const userEmail = currentUser?.email || user?.email;
-      const loggedUser = { email: userEmail };
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      console.log("Auth state changed. Current user:", currentUser);
       setUser(currentUser);
       if (currentUser) {
-        // get token and store client
         const userInfo = { email: currentUser.email };
-        axiosPublic.post('/jwt', userInfo)
-            .then(res => {
-                if (res.data.token) {
-                    localStorage.setItem('access-token', res.data.token);
-                }
-            })
-    }
-    else {
-        // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+        try {
+          const res = await axiosPublic.post('/jwt', userInfo);
+          if (res.data.token) {
+            console.log("Token received:", res.data.token);
+            localStorage.setItem('access-token', res.data.token);
+          }
+        } catch (error) {
+          console.error("Failed to fetch token:", error);
+        }
+      } else {
         localStorage.removeItem('access-token');
-    }
+      }
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [axiosPublic]);
 
   const authInfo = {
     user,
@@ -98,8 +99,12 @@ function AuthProvider({ children }) {
     loading,
     setLoading,
   };
+
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+      {children}
+    </AuthContext.Provider>
   );
 }
+
 export default AuthProvider;

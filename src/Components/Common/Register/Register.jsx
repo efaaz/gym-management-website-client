@@ -46,6 +46,7 @@ function Register() {
         const userInfo = {
           name: data.Name,
           email: email,
+          role: "member",
         };
         // console.log(userInfo);
         axiosPublic.post("/users", userInfo).then((res) => {
