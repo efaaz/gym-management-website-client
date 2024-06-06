@@ -37,14 +37,16 @@ function Navbar() {
           All Trainer
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/dashboard"
-          className="shadow-lg px-4 py-1 border-x text-lg m-1 border-b-4 border-[#981840] rounded-3xl font-semibold"
-        >
-          Dashboard
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/dashboard"
+            className="shadow-lg px-4 py-1 border-x text-lg m-1 border-b-4 border-[#981840] rounded-3xl font-semibold"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
 
       <li>
         <NavLink

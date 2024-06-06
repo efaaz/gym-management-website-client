@@ -53,7 +53,7 @@ function Login() {
         userInfo
       );
 
-      if (response.data.insertedId) {
+      if (response) {
         Swal.fire({
           title: "User Login Successful.",
           showClass: {
