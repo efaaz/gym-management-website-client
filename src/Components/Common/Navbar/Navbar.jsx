@@ -62,7 +62,7 @@ function Navbar() {
       </li>
       <li>
         <NavLink
-          to="/services"
+          to="/community"
           className={({ isActive }) =>
             `mx-2 text-lg ${
               isActive ? "text-[#981840] font-semibold" : "text-gray-400"

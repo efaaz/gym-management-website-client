@@ -19,6 +19,10 @@ import AddNewForum from "../Components/Dashboard/Trainer/AddNewForum/AddNewForum
 import ActivityLog from "../Components/Dashboard/Member/ActivityLog/ActivityLog";
 import BookedTrainer from "../Components/Dashboard/Member/BookedTrainer/BookedTrainer";
 import Profile from "../Components/Dashboard/Member/Profile/Profile";
+import AllTrainer from "../Components/OtherRoutes/AllTrainer/AllTrainer";
+import TrainerDetails from "../Components/OtherRoutes/TrainerDetails/TrainerDetails";
+import BecomeATrainer from "../Components/OtherRoutes/BecomeATrainer/BecomeATrainer";
+import Community from "../Components/OtherRoutes/Community/Community";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +41,22 @@ export const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <Register />,
+      },
+      {
+        path: "/all-trainer",
+        element: <AllTrainer />,
+      },
+      {
+        path: "/trainers/:name",
+        element: <TrainerDetails />,
+      },
+      {
+        path: "/BecomeATrainer",
+        element: <BecomeATrainer />,
+      },
+      {
+        path: "/community",
+        element: <Community />,
       },
     ],
   },
