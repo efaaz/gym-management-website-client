@@ -7,7 +7,7 @@ const CommunityPostCard = ({ title, excerpt, link }) => {
       <h2 className="text-xl font-semibold text-gray-200 mb-4">{title}</h2>
       <p className="text-gray-400 mb-6">{excerpt}</p>
       <Link
-        href={link}
+        to="/community"
         className="inline-block text-teal-500 hover:underline"
         target="_blank"
         rel="noopener noreferrer"

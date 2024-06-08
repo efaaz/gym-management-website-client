@@ -28,7 +28,7 @@ function CommunityCard({
 
     try {
       const response = await axios.patch(
-        `http://localhost:5000/posts/${postId}/upvote`
+        `https://gym-management-livid.vercel.app/posts/${postId}/upvote`
       );
       setUpVotes((prevUpVotes) => prevUpVotes + 1);
     } catch (error) {
@@ -44,7 +44,7 @@ function CommunityCard({
 
     try {
       const response = await axios.patch(
-        `http://localhost:5000/posts/${postId}/downvote`
+        `https://gym-management-livid.vercel.app/posts/${postId}/downvote`
       );
       setDownVotes((prevDownVotes) => prevDownVotes + 1);
     } catch (error) {

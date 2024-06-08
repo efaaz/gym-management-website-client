@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import SectionTitle from "../../Common/SectionTitle/SectionTitle";
 import CommunityCard from "../CommunityCard/CommunityCard";
+import Spinner from "../../Common/Loading/Spinner";
 
 function Community() {
   // State for pagination
@@ -10,7 +11,7 @@ function Community() {
   const limit = 6; // Posts per page
 
   const fetchCommunityPosts = async (page) => {
-    const response = await axios.get(`http://localhost:5000/forum?page=${page}&limit=${limit}`);
+    const response = await axios.get(`https://gym-management-livid.vercel.app/forum?page=${page}&limit=${limit}`);
     return response.data;
   };
 
@@ -20,7 +21,7 @@ function Community() {
     staleTime: 60000, // Optional: Set stale time for cache
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner></Spinner>;
   if (error) return <div>Error loading posts</div>;
 
   return (

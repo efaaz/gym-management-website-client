@@ -3,9 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { FaClock, FaStar, FaArrowLeft } from "react-icons/fa";
+import Spinner from "../../Common/Loading/Spinner";
 
 const fetchTrainerDetails = async (trainerName) => {
-  const response = await axios.get(`http://localhost:5000/trainers/${trainerName}`); // Replace with your API endpoint
+  const response = await axios.get(`https://gym-management-livid.vercel.app/trainers/${trainerName}`); // Replace with your API endpoint
   return response.data;
 };
 
@@ -17,7 +18,7 @@ const TrainerDetails = () => {
     queryFn: () => fetchTrainerDetails(name),
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner></Spinner>;
   if (error) return <div>Error loading trainer details</div>;
 
   return (

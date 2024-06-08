@@ -3,9 +3,10 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import TrainerCard from "../TrainerCard/TrainerCard";
 import SectionTitle from "../../Common/SectionTitle/SectionTitle";
+import Spinner from "../../Common/Loading/Spinner";
 
 const fetchTrainers = async () => {
-    const response = await axios.get("http://localhost:5000/trainers"); // Replace with your API endpoint
+    const response = await axios.get("https://gym-management-livid.vercel.app/trainers"); // Replace with your API endpoint
     return response.data;
   };
 
@@ -15,7 +16,7 @@ function AllTrainer() {
         queryFn: fetchTrainers,
       });
     
-      if (isLoading) return <div>Loading...</div>;
+      if (isLoading) return <Spinner></Spinner>;
       if (error) return <div>Error loading trainers</div>;
     
       return (
