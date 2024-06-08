@@ -1,17 +1,18 @@
 import { useState } from "react"; // Import useState hook
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import SectionTitle from "../../Common/SectionTitle/SectionTitle";
 import CommunityCard from "../CommunityCard/CommunityCard";
 import Spinner from "../../Common/Loading/Spinner";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 function Community() {
+  const axiosPublic = useAxiosPublic();
   // State for pagination
   const [page, setPage] = useState(1);
   const limit = 6; // Posts per page
 
   const fetchCommunityPosts = async (page) => {
-    const response = await axios.get(`https://gym-management-livid.vercel.app/forum?page=${page}&limit=${limit}`);
+    const response = await axiosPublic.get(`/forum?page=${page}&limit=${limit}`);
     return response.data;
   };
 

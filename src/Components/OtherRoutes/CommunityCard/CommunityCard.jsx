@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { LuArrowBigUp, LuArrowBigDown } from "react-icons/lu";
-import axios from "axios";
 import { AuthContext } from "../../../Contexts/AuthProvider";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 function CommunityCard({
   title,
@@ -19,6 +19,7 @@ function CommunityCard({
   const [upVotes, setUpVotes] = useState(initialUpVotesValue);
   const [downVotes, setDownVotes] = useState(initialDownVotesValue);
   const { user } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
 
   const handleUpVote = async () => {
     if (!user) {
@@ -27,9 +28,7 @@ function CommunityCard({
     }
 
     try {
-      const response = await axios.patch(
-        `https://gym-management-livid.vercel.app/posts/${postId}/upvote`
-      );
+      const response = await axiosPublic.patch(`/posts/${postId}/upvote`);
       setUpVotes((prevUpVotes) => prevUpVotes + 1);
     } catch (error) {
       console.error("Error upvoting post:", error);
@@ -43,9 +42,7 @@ function CommunityCard({
     }
 
     try {
-      const response = await axios.patch(
-        `https://gym-management-livid.vercel.app/posts/${postId}/downvote`
-      );
+      const response = await axiosPublic.patch(`/posts/${postId}/downvote`);
       setDownVotes((prevDownVotes) => prevDownVotes + 1);
     } catch (error) {
       console.error("Error downvoting post:", error);

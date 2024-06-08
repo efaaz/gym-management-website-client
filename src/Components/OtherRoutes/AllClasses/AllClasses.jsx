@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Spinner from "../../Common/Loading/Spinner";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import SectionTitle from "../../Common/SectionTitle/SectionTitle";
 import ClassCard from "../ClassCard/ClassCard";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 function AllClasses() {
+  const axiosPublic = useAxiosPublic();
   // State for pagination
   const [page, setPage] = useState(1);
   const limit = 6; // Posts per page
 
   const fetchClasses = async (page) => {
-    const response = await axios.get(
-      `https://gym-management-livid.vercel.app/classes?page=${page}&limit=${limit}`
+    const response = await axiosPublic.get(
+      `/classes?page=${page}&limit=${limit}`
     ); // Replace with your API endpoint
     return response.data;
   };
