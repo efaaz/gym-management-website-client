@@ -47,7 +47,7 @@ const BecomeATrainer = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/apply-trainer", formData);
+      const response = await axios.post("https://gym-management-livid.vercel.app/apply-trainer", formData);
       if (response.status === 200) {
        Swal.fire({
           title: "Application submitted successfully!",
