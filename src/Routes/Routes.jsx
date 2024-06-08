@@ -25,6 +25,7 @@ import BecomeATrainer from "../Components/OtherRoutes/BecomeATrainer/BecomeATrai
 import Community from "../Components/OtherRoutes/Community/Community";
 import TrainerBooked from "../Components/OtherRoutes/TrainerBooked/TrainerBooked";
 import PaymentPage from "../Components/OtherRoutes/PaymentPage/PaymentPage";
+import AllClasses from "../Components/OtherRoutes/AllClasses/AllClasses";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/all-trainer",
         element: <AllTrainer />,
+      },
+      {
+        path: "/all-classes",
+        element: <AllClasses />,
       },
       {
         path: "/trainers/:name",

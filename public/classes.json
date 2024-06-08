@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "title": "Yoga",
+        "coverImg": "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Experience the benefits of Yoga with our professional trainers. Improve your flexibility, strength, and mental clarity.",
+        "trainers": [
+            "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Pilates",
+        "coverImg": "https://images.pexels.com/photos/1103242/pexels-photo-1103242.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Join our Pilates classes to build strength, flexibility, and lean muscle tone with an emphasis on lengthening the body and aligning the spine.",
+        "trainers": [
+            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Zumba",
+        "coverImg": "https://images.pexels.com/photos/3775566/pexels-photo-3775566.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Dance your way to fitness with our energetic Zumba classes. Burn calories while having fun with Latin-inspired music and moves.",
+        "trainers": [
+            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?b=1&s=612x612&w=0&k=20&c=hEPh7-WEAqHTHdQtPrfEN9-yYCiPGKvD32VZ5lcL6SU=",
+            "https://images.pexels.com/photos/5028378/pexels-photo-5028378.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI="
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Spinning",
+        "coverImg": "https://images.pexels.com/photos/6453483/pexels-photo-6453483.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Get your heart pumping and legs moving in our high-energy Spinning classes. Burn calories and improve cardiovascular health.",
+        "trainers": [
+            "https://images.pexels.com/photos/4769490/pexels-photo-4769490.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1305462732/photo/headshot-studio-portrait-of-a-woman-in-profile-looking-at-the-camera.jpg?b=1&s=612x612&w=0&k=20&c=ezuy8zI7t7IbiMfhoJjmKBzxoWsGcsaroqeuVcUzgCY=",
+            "https://media.istockphoto.com/id/1311084168/photo/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter.jpg?b=1&s=612x612&w=0&k=20&c=j6JFqJNLKTE7ubhZUsYeTcKh5_5nHgVCvh9qg7f5KzI=",
+            "https://images.pexels.com/photos/4947563/pexels-photo-4947563.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Boxing",
+        "coverImg": "https://images.pexels.com/photos/1575381/pexels-photo-1575381.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Unleash your inner fighter with our Boxing classes. Learn proper technique, improve strength, and relieve stress.",
+        "trainers": [
+            "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Bootcamp",
+        "coverImg": "https://media.istockphoto.com/id/1138160723/photo/participants-in-obstacle-course-climbing-net.jpg?b=1&s=612x612&w=0&k=20&c=f3vnA7C6wdwhITeTPx8l_xff6DmqrNsBykz3le2cjDg=",
+        "description": "Challenge yourself with our intense Bootcamp workouts. Build strength, endurance, and mental toughness in a supportive environment.",
+        "trainers": [
+            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "CrossFit",
+        "coverImg": "https://images.pexels.com/photos/28080/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Join our CrossFit classes for a full-body workout combining functional movements, cardio, and strength training. Suitable for all fitness levels.",
+        "trainers": [
+            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?b=1&s=612x612&w=0&k=20&c=hEPh7-WEAqHTHdQtPrfEN9-yYCiPGKvD32VZ5lcL6SU=",
+            "https://images.pexels.com/photos/5028378/pexels-photo-5028378.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI="
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Barre",
+        "coverImg": "https://images.pexels.com/photos/5154003/pexels-photo-5154003.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Strengthen, lengthen, and tone your body with our Barre classes. Utilizing ballet-inspired moves, you'll improve posture and flexibility.",
+        "trainers": [
+            "https://images.pexels.com/photos/4769490/pexels-photo-4769490.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1305462732/photo/headshot-studio-portrait-of-a-woman-in-profile-looking-at-the-camera.jpg?b=1&s=612x612&w=0&k=20&c=ezuy8zI7t7IbiMfhoJjmKBzxoWsGcsaroqeuVcUzgCY=",
+            "https://media.istockphoto.com/id/1311084168/photo/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter.jpg?b=1&s=612x612&w=0&k=20&c=j6JFqJNLKTE7ubhZUsYeTcKh5_5nHgVCvh9qg7f5KzI=",
+            "https://images.pexels.com/photos/4947563/pexels-photo-4947563.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "HIIT",
+        "coverImg": "https://images.pexels.com/photos/5409085/pexels-photo-5409085.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Maximize calorie burn and improve cardiovascular fitness with our High-Intensity Interval Training (HIIT) classes. Get ready for a challenging workout!",
+        "trainers": [
+            "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Kickboxing",
+        "coverImg": "https://images.pexels.com/photos/8612065/pexels-photo-8612065.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Learn self-defense techniques while getting an intense cardio workout in our Kickboxing classes. Improve strength, agility, and coordination.",
+        "trainers": [
+            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Barre",
+        "coverImg": "https://images.pexels.com/photos/5154003/pexels-photo-5154003.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "description": "Strengthen, lengthen, and tone your body with our Barre classes. Utilizing ballet-inspired moves, you'll improve posture and flexibility.",
+        "trainers": [
+            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?b=1&s=612x612&w=0&k=20&c=hEPh7-WEAqHTHdQtPrfEN9-yYCiPGKvD32VZ5lcL6SU=",
+            "https://images.pexels.com/photos/5028378/pexels-photo-5028378.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI="
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Yoga",
+        "coverImg": "",
+        "description": "Experience the benefits of Yoga with our professional trainers. Improve your flexibility, strength, and mental clarity.",
+        "trainers": [
+            "https://images.pexels.com/photos/4769490/pexels-photo-4769490.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1305462732/photo/headshot-studio-portrait-of-a-woman-in-profile-looking-at-the-camera.jpg?b=1&s=612x612&w=0&k=20&c=ezuy8zI7t7IbiMfhoJjmKBzxoWsGcsaroqeuVcUzgCY=",
+            "https://media.istockphoto.com/id/1311084168/photo/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter.jpg?b=1&s=612x612&w=0&k=20&c=j6JFqJNLKTE7ubhZUsYeTcKh5_5nHgVCvh9qg7f5KzI=",
+            "https://images.pexels.com/photos/4947563/pexels-photo-4947563.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Pilates",
+        "coverImg": "",
+        "description": "Join our Pilates classes to build strength, flexibility, and lean muscle tone with an emphasis on lengthening the body and aligning the spine.",
+        "trainers": [
+            "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Zumba",
+        "coverImg": "",
+        "description": "Dance your way to fitness with our energetic Zumba classes. Burn calories while having fun with Latin-inspired music and moves.",
+        "trainers": [
+            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Spinning",
+        "coverImg": "",
+        "description": "Get your heart pumping and legs moving in our high-energy Spinning classes. Burn calories and improve cardiovascular health.",
+        "trainers": [
+            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?b=1&s=612x612&w=0&k=20&c=hEPh7-WEAqHTHdQtPrfEN9-yYCiPGKvD32VZ5lcL6SU=",
+            "https://images.pexels.com/photos/5028378/pexels-photo-5028378.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI="
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Boxing",
+        "coverImg": "",
+        "description": "Unleash your inner fighter with our Boxing classes. Learn proper technique, improve strength, and relieve stress.",
+        "trainers": [
+            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Bootcamp",
+        "coverImg": "",
+        "description": "Challenge yourself with our intense Bootcamp workouts. Build strength, endurance, and mental toughness in a supportive environment.",
+        "trainers": [
+            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?b=1&s=612x612&w=0&k=20&c=hEPh7-WEAqHTHdQtPrfEN9-yYCiPGKvD32VZ5lcL6SU=",
+            "https://images.pexels.com/photos/5028378/pexels-photo-5028378.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI="
+        ]
+    },
+    {
+        "id": 18,
+        "title": "CrossFit",
+        "coverImg": "",
+        "description": "Join our CrossFit classes for a full-body workout combining functional movements, cardio, and strength training. Suitable for all fitness levels.",
+        "trainers": [
+            "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ]
+    }
+]
