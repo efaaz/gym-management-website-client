@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const PaymentPage = () => {
+  const navigate = useNavigate();
   const { trainer, slot, packageName } = useParams();
   const location = useLocation();
   const { price, userName, userEmail } = location.state; // Assuming these details are passed via state
@@ -21,9 +23,18 @@ const PaymentPage = () => {
     };
 
     try {
-      const response = await axios.post("https://api.example.com/payment", paymentInfo);
+      const response = await axios.post("https://gym-management-livid.vercel.app/payment", paymentInfo);
       if (response.status === 200) {
-        alert("Payment confirmed successfully!");
+        Swal.fire({
+          title: "Booked Trainer Successfully!",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+        navigate("/")
       }
     } catch (error) {
       console.error("There was an error confirming the payment!", error);
