@@ -23,6 +23,8 @@ import AllTrainer from "../Components/OtherRoutes/AllTrainer/AllTrainer";
 import TrainerDetails from "../Components/OtherRoutes/TrainerDetails/TrainerDetails";
 import BecomeATrainer from "../Components/OtherRoutes/BecomeATrainer/BecomeATrainer";
 import Community from "../Components/OtherRoutes/Community/Community";
+import TrainerBooked from "../Components/OtherRoutes/TrainerBooked/TrainerBooked";
+import PaymentPage from "../Components/OtherRoutes/PaymentPage/PaymentPage";
 
 export const router = createBrowserRouter([
   {
@@ -52,11 +54,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "/BecomeATrainer",
-        element: <BecomeATrainer />,
+        element: (
+          <PrivateRoute>
+            <BecomeATrainer />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/community",
         element: <Community />,
+      },
+      {
+        path: "/book/:trainer/:slot",
+        element: (
+          <PrivateRoute>
+            <TrainerBooked />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/payment/:trainer/:slot/:packageName",
+        element: (
+          <PrivateRoute>
+            <PaymentPage />
+          </PrivateRoute>
+        ),
       },
     ],
   },
