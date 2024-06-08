@@ -3,6 +3,7 @@ import Select from "react-select";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const daysOptions = [
   { value: "Sun", label: "Sunday" },
@@ -25,6 +26,7 @@ const skillsOptions = [
 ];
 
 const BecomeATrainer = () => {
+  const axiosPublic = useAxiosPublic();
   const { user } = useAuth(); // Assuming you have an AuthContext to get user info
   const [fullName, setFullName] = useState("");
   const [age, setAge] = useState("");
@@ -47,9 +49,9 @@ const BecomeATrainer = () => {
     };
 
     try {
-      const response = await axios.post("https://gym-management-livid.vercel.app/apply-trainer", formData);
+      const response = await axiosPublic.post("/apply-trainer", formData);
       if (response.status === 200) {
-       Swal.fire({
+        Swal.fire({
           title: "Application submitted successfully!",
           showClass: {
             popup: "animate__animated animate__fadeInDown",

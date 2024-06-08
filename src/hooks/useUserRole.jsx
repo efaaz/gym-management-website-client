@@ -12,7 +12,6 @@ const useUserRole = () => {
             if (!user?.email) return null; // Ensure email is available
             try {
                 const res = await axiosSecure.get(`/users/role/${user.email}`);
-                console.log(res.data);
                 return res.data?.role;
             } catch (error) {
                 console.error('Error fetching user role:', error);

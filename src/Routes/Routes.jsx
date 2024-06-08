@@ -26,6 +26,7 @@ import Community from "../Components/OtherRoutes/Community/Community";
 import TrainerBooked from "../Components/OtherRoutes/TrainerBooked/TrainerBooked";
 import PaymentPage from "../Components/OtherRoutes/PaymentPage/PaymentPage";
 import AllClasses from "../Components/OtherRoutes/AllClasses/AllClasses";
+import AdminTrainerDetails from "../Components/Dashboard/Admin/AminTrainerDetails/AdminTrainerDetails";
 
 export const router = createBrowserRouter([
   {
@@ -111,6 +112,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/applied-trainers",
         element: <AppliedTrainers></AppliedTrainers>,
+      },
+      {
+        path: '/dashboard/trainer-details/:id',
+        element: <AdminTrainerDetails />,
       },
       {
         path: "/dashboard/newsletter-subscribers",
