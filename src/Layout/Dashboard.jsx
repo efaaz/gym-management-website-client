@@ -1,5 +1,4 @@
 import {
-  FaAd,
   FaBook,
   FaEnvelope,
   FaHome,
@@ -26,18 +25,6 @@ const Dashboard = () => {
         <ul className="menu p-4">
           {userRole === "admin" && (
             <>
-              <li>
-                <NavLink to="/dashboard/adminHome">
-                  <FaHome />
-                  Admin Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/manage-slots">
-                  <FaBook />
-                  Manage Slots
-                </NavLink>
-              </li>
               <li>
                 <NavLink to="/dashboard/all-trainers">
                   <FaUsers />

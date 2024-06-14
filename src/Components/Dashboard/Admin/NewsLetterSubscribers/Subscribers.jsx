@@ -21,9 +21,6 @@ function Subscribers() {
   if (error) return <div>Error loading trainers</div>;
   return (
     <>
-      <Helmet>
-        <title>ServiceSphere | To Do</title>
-      </Helmet>
       <h1 className="text-center md:text-3xl text-xl">Newsletter Subscribers Information</h1>
       <div className="overflow-x-auto max-w-7xl mx-auto">
         <table className="table">
