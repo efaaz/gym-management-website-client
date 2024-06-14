@@ -15,7 +15,14 @@ const AddNewClass = () => {
       title: className,
       coverImg: image, // Image URL
       description: details,
-      trainers: additionalInfo,
+      trainerDetails: additionalInfo,
+      trainers: [
+        "https://images.pexels.com/photos/20400626/pexels-photo-20400626/free-photo-of-portrait-of-man-in-unzipped-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/20400632/pexels-photo-20400632/free-photo-of-portrait-of-man-in-tank-top-at-gym.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800",
+      ],
     };
 
     try {
