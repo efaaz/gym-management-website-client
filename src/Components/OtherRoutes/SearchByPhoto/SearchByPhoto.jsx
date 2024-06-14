@@ -4,13 +4,15 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { FaClock, FaStar, FaArrowLeft } from "react-icons/fa";
 import Spinner from "../../Common/Loading/Spinner";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 const SearchByPhoto = () => {
+    const axiosPublic = useAxiosPublic();
   const { photo } = useParams();
 
   const fetchTrainerDetails = async (photoURL) => {
     try {
-      const response = await axios.get(
-        `http://localhost:5000/search-by-photo`,
+      const response = await axiosPublic.get(
+        `/search-by-photo`,
         {
           params: {
             photoUrl: photoURL,
