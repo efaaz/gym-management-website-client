@@ -81,10 +81,10 @@ const TrainerBooked = () => {
               <Link
                 to={`/payment/${trainer}/${slot}/${pkg.name}`}
                 state={{
-                  price: pkg.price,
+                  cost: pkg.price,
                   userName: user.displayName,
                   userEmail: user.email,
-                }} // replace with actual user data
+                }} 
                 className={`bg-[#981840] text-white py-2 border-none w-full flex items-center px-3 rounded-xl hover:bg-[#790f32] transition duration-300`}
               >
                 Join Now
