@@ -30,6 +30,7 @@ const AdminTrainerDetails = () => {
     return response.data;
   };
 
+
   if (isLoading) return <Spinner></Spinner>;
   if (error) return <div>Error loading trainer details</div>;
 

@@ -27,6 +27,7 @@ import TrainerBooked from "../Components/OtherRoutes/TrainerBooked/TrainerBooked
 import PaymentPage from "../Components/OtherRoutes/PaymentPage/PaymentPage";
 import AllClasses from "../Components/OtherRoutes/AllClasses/AllClasses";
 import AdminTrainerDetails from "../Components/Dashboard/Admin/AminTrainerDetails/AdminTrainerDetails";
+import SearchByPhoto from "../Components/OtherRoutes/SearchByPhoto/SearchByPhoto";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "/trainers/:name",
         element: <TrainerDetails />,
+      },
+      {
+        path: "/serch-by-photo/:photo",
+        element: <SearchByPhoto />,
       },
       {
         path: "/BecomeATrainer",

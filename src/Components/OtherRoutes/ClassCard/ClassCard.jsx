@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ClassCard = ({ title, description, trainers, coverImg }) => {
   return (
@@ -15,9 +16,13 @@ const ClassCard = ({ title, description, trainers, coverImg }) => {
           <p className="md:text-lg text-gray-300 text-base">{description}</p>
           <h3 className="font-bold text-xl">Trainers who took this class:</h3>
           <div className="avatar">
-            {trainers.map((img, idx) => (
+            {trainers.map((photo, idx) => (
               <div key={idx} className="w-12 rounded-full my-2 ml-2">
-                <img src={img} />
+                <Link
+                  to={`/serch-by-photo/${encodeURIComponent(photo)}`} // Pass photo link in the route path
+                >
+                  <img src={photo} />
+                </Link>
               </div>
             ))}
           </div>
