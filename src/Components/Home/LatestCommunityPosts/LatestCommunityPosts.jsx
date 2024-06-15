@@ -1,16 +1,15 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import CommunityPostCard from "../CommunityPostCard/CommunityPostCard";
 import SectionTitle from "../../Common/SectionTitle/SectionTitle";
-
-
-const fetchCommunityPosts = async () => {
-  const response = await axios.get("http://localhost:5000/latest/forum");
-  return response.data;
-};
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const LatestCommunityPosts = () => {
+  const axiosPublic = useAxiosPublic();
+  const fetchCommunityPosts = async () => {
+    const response = await axiosPublic.get("/latest/forum");
+    return response.data;
+  };
   const { data, error, isLoading } = useQuery({
     queryKey: ["communityPosts"],
     queryFn: fetchCommunityPosts,

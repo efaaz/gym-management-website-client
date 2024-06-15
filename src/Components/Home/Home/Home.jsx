@@ -21,7 +21,9 @@ function Home() {
       <FeatureSection></FeatureSection>
       <AboutSection></AboutSection>
       <FeaturedClasses></FeaturedClasses>
-      <ReviewSlider></ReviewSlider>
+      <div className="w-[80%] mx-auto">
+        <ReviewSlider></ReviewSlider>
+      </div>
       <LatestCommunityPosts></LatestCommunityPosts>
       <NewsLetter></NewsLetter>
       <TeamSection></TeamSection>
