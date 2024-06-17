@@ -18,34 +18,46 @@ function AuthProvider({ children }) {
   const axiosPublic = useAxiosPublic();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const provider = new GoogleAuthProvider();
-  const GitHubProvider = new GithubAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
+  const gitHubProvider = new GithubAuthProvider();
 
-  const signIn = (email, password) => {
+  const signIn = async (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
+    try {
+      return await signInWithEmailAndPassword(auth, email, password);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const signUp = (email, password) => {
+  const signUp = async (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    try {
+      return await createUserWithEmailAndPassword(auth, email, password);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const logOut = async () => {
     setLoading(true);
-    return signOut(auth).then(() => {
-      localStorage.removeItem('access-token');
-      setUser(null);
+    try {
+      return signOut(auth).then(() => {
+        localStorage.removeItem("access-token");
+        setUser(null);
+      });
+    } finally {
       setLoading(false);
-    });
+    }
   };
 
-  const googleSignin = () => {
-    return signInWithPopup(auth, provider);
-  };
-
-  const gitHubSignin = () => {
-    return signInWithPopup(auth, GitHubProvider);
+  const googleSignin = async () => {
+    setLoading(true);
+    try {
+      return await signInWithPopup(auth, googleProvider);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const updateProfile = async (displayName, photoURL) => {
@@ -66,21 +78,19 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      // console.log("Auth state changed. Current user:", currentUser);
       setUser(currentUser);
       if (currentUser) {
         const userInfo = { email: currentUser.email };
         try {
-          const res = await axiosPublic.post('/jwt', userInfo);
+          const res = await axiosPublic.post("/jwt", userInfo);
           if (res.data.token) {
-            // console.log("Token received:", res.data.token);
-            localStorage.setItem('access-token', res.data.token);
+            localStorage.setItem("access-token", res.data.token);
           }
         } catch (error) {
           console.error("Failed to fetch token:", error);
         }
       } else {
-        localStorage.removeItem('access-token');
+        localStorage.removeItem("access-token");
       }
       setLoading(false);
     });
@@ -93,7 +103,6 @@ function AuthProvider({ children }) {
     signUp,
     signIn,
     googleSignin,
-    gitHubSignin,
     logOut,
     updateProfile,
     loading,
@@ -101,9 +110,7 @@ function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 }
 

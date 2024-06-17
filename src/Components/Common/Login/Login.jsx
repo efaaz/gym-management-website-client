@@ -7,8 +7,10 @@ import { AuthContext } from "../../../Contexts/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 function Login() {
+  const axiosPublic = useAxiosPublic();
   const {
     register,
     handleSubmit,
@@ -48,10 +50,7 @@ function Login() {
       };
 
       // Send user information to your backend
-      const response = await axios.post(
-        "http://localhost:5000/users",
-        userInfo
-      );
+      const response = await axiosPublic.post("/users", userInfo);
 
       if (response) {
         Swal.fire({

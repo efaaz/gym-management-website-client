@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import Spinner from "../../../Common/Loading/Spinner";
@@ -8,10 +7,17 @@ import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const Profile = () => {
   const axiosPublic = useAxiosPublic();
-  const { user } = useAuth(); // Get the current user info from AuthContext
-  const [name, setName] = useState("");
-  const [profilePicture, setProfilePicture] = useState("");
+  const { user, updateProfile, loading } = useAuth();
+  const [name, setName] = useState(user.displayName || "");
+  const [profilePicture, setProfilePicture] = useState(user.photoURL || "");
   const [otherInfo, setOtherInfo] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      setName(user.displayName);
+      setProfilePicture(user.photoURL);
+    }
+  }, [user]);
 
   const fetchProfile = async () => {
     const response = await axiosPublic.get(`/profile/${user.email}`);
@@ -22,8 +28,6 @@ const Profile = () => {
     queryKey: ["profile"],
     queryFn: fetchProfile,
     onSuccess: (data) => {
-      setName(data.name);
-      setProfilePicture(data.profilePicture);
       setOtherInfo(data.otherInfo || "");
     },
   });
@@ -33,6 +37,10 @@ const Profile = () => {
     const profileData = { name, profilePicture, otherInfo };
 
     try {
+      // Update profile in Firebase
+      await updateProfile(name, profilePicture);
+
+      // Update profile in the database
       const response = await axiosPublic.put(
         `/profile/${user.email}`,
         profileData
@@ -65,7 +73,7 @@ const Profile = () => {
     }
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading || loading) return <Spinner />;
   if (error) return <div>Error loading profile</div>;
 
   return (
@@ -87,7 +95,7 @@ const Profile = () => {
           <input
             id="name"
             type="text"
-            defaultValue={user.displayName}
+            value={name}
             onChange={(e) => setName(e.target.value)}
             required
             className="w-full p-2 rounded-md bg-gray-800 border border-gray-700 text-gray-200"
@@ -103,7 +111,7 @@ const Profile = () => {
           <input
             id="profilePicture"
             type="text"
-            defaultValue={user.photoURL}
+            value={profilePicture}
             onChange={(e) => setProfilePicture(e.target.value)}
             required
             className="w-full p-2 rounded-md bg-gray-800 border border-gray-700 text-gray-200"
@@ -119,7 +127,7 @@ const Profile = () => {
           <input
             id="email"
             type="email"
-            defaultValue={user.email}
+            value={user.email}
             readOnly
             className="w-full p-2 rounded-md bg-gray-800 border border-gray-700 text-gray-200"
           />

@@ -41,14 +41,14 @@ function Register() {
 
     signUp(data.Email, data.Password)
       .then((userCredential) => {
-        // console.log(data);
+        console.log(userCredential);
         const email = userCredential.user?.email;
         const userInfo = {
           name: data.Name,
           email: email,
           role: "member",
         };
-        // console.log(userInfo);
+        console.log(userInfo);
         axiosPublic.post("/users", userInfo).then((res) => {
           if (res.data.insertedId) {
             // console.log("user added to the database");
