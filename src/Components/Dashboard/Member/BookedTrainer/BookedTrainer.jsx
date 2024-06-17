@@ -1,25 +1,27 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import Swal from "sweetalert2";
+import useAuth from "../../../../hooks/useAuth";
 import Spinner from "../../../Common/Loading/Spinner";
+import { FaStar } from "react-icons/fa";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const BookedTrainer = () => {
-  const { userId } = useParams();
+  const axiosPublic = useAxiosPublic();
+  const { user } = useAuth(); // Get the current user info from AuthContext
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState("");
+  const [rating, setRating] = useState(0);
+  const image = user.photoURL;
+  const name = user.displayName;
 
-  const fetchBookedTrainerDetails = async (userId) => {
-    const response = await axios.get(
-      `http://localhost:5000/booked-trainer/${userId}`
-    );
+  const fetchBookedTrainerDetails = async (email) => {
+    const response = await axiosPublic.get(`/booked-trainer/${email}`);
     return response.data;
   };
 
-  const fetchClassesAndSlots = async (trainerId) => {
-    const response = await axios.get(
-      `http://localhost:5000/trainer-classes-slots/${trainerId}`
-    );
+  const fetchClassesAndSlots = async () => {
+    const response = await axiosPublic.get(`/trainer-classes-slots`);
     return response.data;
   };
 
@@ -28,8 +30,8 @@ const BookedTrainer = () => {
     error: trainerError,
     isLoading: trainerLoading,
   } = useQuery({
-    queryKey: ["bookedTrainer", userId],
-    queryFn: () => fetchBookedTrainerDetails(userId),
+    queryKey: ["bookedTrainer", user.email],
+    queryFn: () => fetchBookedTrainerDetails(user.email),
   });
 
   const {
@@ -37,21 +39,25 @@ const BookedTrainer = () => {
     error: classesAndSlotsError,
     isLoading: classesAndSlotsLoading,
   } = useQuery({
-    queryKey: ["classesAndSlots", trainerData?.trainer?._id],
-    queryFn: () => fetchClassesAndSlots(trainerData?.trainer?._id),
-    enabled: !!trainerData?.trainer?._id,
+    queryKey: ["classesAndSlots"],
+    queryFn: () => fetchClassesAndSlots(),
   });
 
+  if (!trainerData || !trainerData.trainer) {
+    return <div>No trainer data available</div>;
+  }
   if (trainerLoading || classesAndSlotsLoading) return <Spinner />;
   if (trainerError || classesAndSlotsError)
     return <div>Error loading data</div>;
 
   const handleFeedbackSubmit = async () => {
     try {
-      await axios.post(`http://localhost:5000/submit-feedback`, {
-        userId,
-        trainerId: trainerData.trainer._id,
+      await axiosPublic.post(`/submit-feedback`, {
+        userEmail: user.email,
         feedback,
+        name,
+        image,
+        rating,
       });
       Swal.fire({
         title: "Feedback submitted successfully!",
@@ -94,7 +100,7 @@ const BookedTrainer = () => {
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-bold text-[#981840]">Classes Info</h3>
-          {classesAndSlotsData.classes.map((classInfo, index) => (
+          {classesAndSlotsData?.classes?.map((classInfo, index) => (
             <div key={index}>
               <p>Class: {classInfo.title}</p>
               <p>Description: {classInfo.description}</p>
@@ -103,16 +109,15 @@ const BookedTrainer = () => {
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-bold text-[#981840]">Slot Info</h3>
-          {classesAndSlotsData.slots.map((slot, index) => (
+          {classesAndSlotsData?.slots?.map((slot, index) => (
             <div key={index}>
-              <p>Day: {slot.day}</p>
-              <p>Time: {slot.time}</p>
+              <p>{slot.availableSlots}</p>
             </div>
           ))}
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-bold text-[#981840]">Other Info</h3>
-          <p>{trainerData.booking.otherInfo}</p>
+          <p>{trainerData.booking.additionalInfo}</p>
         </div>
         <div className="text-center">
           <button
@@ -126,16 +131,28 @@ const BookedTrainer = () => {
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">
+          <div className="bg-[#771232] p-8 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 className="text-lg font-bold text-gray-200 mb-4">
               Submit Feedback
             </h3>
             <textarea
-              className="mt-4 w-full p-2 border border-gray-300 rounded-md"
+              className="mt-4 w-full p-2 border bg-[#2a0712] border-none rounded-md"
               placeholder="Provide feedback..."
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
             />
+            <div className="flex items-center mt-4">
+              <p className="mr-2">Rating:</p>
+              {[1, 2, 3, 4, 5].map((star) => (
+                <FaStar
+                  key={star}
+                  className={`cursor-pointer ${
+                    rating >= star ? "text-yellow-500" : "text-gray-400"
+                  }`}
+                  onClick={() => setRating(star)}
+                />
+              ))}
+            </div>
             <div className="flex justify-end mt-4">
               <button
                 onClick={() => setShowModal(false)}
