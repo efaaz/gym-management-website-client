@@ -46,7 +46,7 @@ function Banner() {
                   personalized workout classes that fit your schedule, fitness
                   level, and objectives.
                 </p>
-                <Link to="/services" className="btn bg-[#771333] text-white">
+                <Link to="/all-classes" className="btn bg-[#771333] text-white">
                   Explore Classes
                 </Link>
               </div>
