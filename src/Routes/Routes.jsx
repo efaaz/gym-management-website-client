@@ -6,16 +6,13 @@ import Login from "../Components/Common/Login/Login";
 import Register from "../Components/Common/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
-import ManageSlots from "../Components/Dashboard/Admin/ManageSlots/ManageSlots";
 import AllTrainers from "../Components/Dashboard/Admin/AllTrainers/AllTrainers";
 import AppliedTrainers from "../Components/Dashboard/Admin/AppliedTrainers/AppliedTrainers";
-import NewsLetter from "../Components/Home/NewsLetter/NewsLetter";
 import AddNewsClasses from "../Components/Dashboard/Admin/AddNewClasses/AddNewsClasses";
 import Blance from "../Components/Dashboard/Admin/Balance/Blance";
 import Subscribers from "../Components/Dashboard/Admin/NewsLetterSubscribers/Subscribers";
 import AdminHome from "../Components/Dashboard/Admin/Home/AdminHome";
 import AddNewSlots from "../Components/Dashboard/Trainer/AddNewSlots/AddNewSlots";
-import AddNewForum from "../Components/Dashboard/Trainer/AddNewForum/AddNewForum";
 import ActivityLog from "../Components/Dashboard/Member/ActivityLog/ActivityLog";
 import BookedTrainer from "../Components/Dashboard/Member/BookedTrainer/BookedTrainer";
 import Profile from "../Components/Dashboard/Member/Profile/Profile";
@@ -30,6 +27,7 @@ import AdminTrainerDetails from "../Components/Dashboard/Admin/AminTrainerDetail
 import SearchByPhoto from "../Components/OtherRoutes/SearchByPhoto/SearchByPhoto";
 import AddNewForumAdmin from "../Components/Dashboard/Admin/AddNewForumAdmin/AddNewForumAdmin";
 import AddNewForumTrainer from "../Components/Dashboard/Trainer/AddNewForumTrainer/AddNewForumTrainer";
+import ManageSlots from "../Components/Dashboard/Trainer/ManageSlots/ManageSlots";
 
 export const router = createBrowserRouter([
   {
