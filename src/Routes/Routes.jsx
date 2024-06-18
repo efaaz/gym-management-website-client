@@ -28,6 +28,8 @@ import PaymentPage from "../Components/OtherRoutes/PaymentPage/PaymentPage";
 import AllClasses from "../Components/OtherRoutes/AllClasses/AllClasses";
 import AdminTrainerDetails from "../Components/Dashboard/Admin/AminTrainerDetails/AdminTrainerDetails";
 import SearchByPhoto from "../Components/OtherRoutes/SearchByPhoto/SearchByPhoto";
+import AddNewForumAdmin from "../Components/Dashboard/Admin/AddNewForumAdmin/AddNewForumAdmin";
+import AddNewForumTrainer from "../Components/Dashboard/Trainer/AddNewForumTrainer/AddNewForumTrainer";
 
 export const router = createBrowserRouter([
   {
@@ -119,7 +121,7 @@ export const router = createBrowserRouter([
         element: <AppliedTrainers></AppliedTrainers>,
       },
       {
-        path: '/dashboard/trainer-details/:id',
+        path: "/dashboard/trainer-details/:id",
         element: <AdminTrainerDetails />,
       },
       {
@@ -131,15 +133,15 @@ export const router = createBrowserRouter([
         element: <AddNewsClasses></AddNewsClasses>,
       },
       {
+        path: "/dashboard/add-new-form",
+        element: <AddNewForumAdmin></AddNewForumAdmin>,
+      },
+      {
         path: "/dashboard/balance",
         element: <Blance></Blance>,
       },
 
       // Trainer Routes
-      {
-        path: "/dashboard/add-new-forum",
-        element: <AddNewForum></AddNewForum>,
-      },
       {
         path: "/dashboard/add-new-slot",
         element: <AddNewSlots></AddNewSlots>,
@@ -147,6 +149,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/manage-slots",
         element: <ManageSlots></ManageSlots>,
+      },
+      {
+        path: "/dashboard/add-new-form-trainer",
+        element: <AddNewForumTrainer></AddNewForumTrainer>,
       },
 
       // Member Routes

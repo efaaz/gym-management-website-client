@@ -5,7 +5,7 @@ import {
   FaList,
   FaSearch,
   FaUsers,
-  FaRegPlusSquare
+  FaRegPlusSquare,
 } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { RxActivityLog } from "react-icons/rx";
@@ -50,6 +50,12 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/dashboard/add-new-form">
+                  <FaRegPlusSquare />
+                  Add New Forum
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/dashboard/balance">
                   <MdOutlineAccountBalanceWallet />
                   Balance
@@ -78,7 +84,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/add-new-forum">
+                <NavLink to="/dashboard/add-new-form-trainer">
                   <FaRegPlusSquare />
                   Add New Forum
                 </NavLink>
@@ -102,7 +108,7 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/profile">
                   <CgProfile />
-                  Profile 
+                  Profile
                 </NavLink>
               </li>
               <li>

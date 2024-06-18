@@ -9,6 +9,7 @@ function CommunityCard({
   postId,
   upVotes: initialUpVotes,
   downVotes: initialDownVotes,
+  badge,
 }) {
   const initialUpVotesValue = isNaN(initialUpVotes)
     ? 0
@@ -53,15 +54,20 @@ function CommunityCard({
     <div className="max-w-sm p-6 bg-[#1a1a1a] rounded-lg shadow-lg transition-transform transform hover:scale-105">
       <h2 className="text-xl font-semibold text-gray-200 mb-4">{title}</h2>
       <p className="text-gray-400 mb-6">{excerpt}</p>
-      <div className="flex items-center">
-        <button onClick={handleUpVote} className="mr-2">
-          <LuArrowBigUp className="text-green-500 text-2xl" />
-        </button>
-        <span className="text-green-500 text-xl">{upVotes}</span>
-        <button onClick={handleDownVote} className="ml-2">
-          <LuArrowBigDown className="text-red-600 text-2xl" />
-        </button>
-        <span className="text-red-600 text-xl">{downVotes}</span>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center">
+          <button onClick={handleUpVote} className="mr-2">
+            <LuArrowBigUp className="text-green-500 text-2xl" />
+          </button>
+          <span className="text-green-500 text-xl">{upVotes}</span>
+          <button onClick={handleDownVote} className="ml-2">
+            <LuArrowBigDown className="text-red-600 text-2xl" />
+          </button>
+          <span className="text-red-600 text-xl">{downVotes}</span>
+        </div>
+        <p className="text-green-500 rounded-lg px-2 py-1 font-bold border border-[#981840]">
+          {badge}
+        </p>
       </div>
     </div>
   );

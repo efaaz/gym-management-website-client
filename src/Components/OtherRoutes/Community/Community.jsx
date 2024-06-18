@@ -38,6 +38,7 @@ function Community() {
             postId={post._id}
             upVotes={post.upVotes}
             downVotes={post.downVotes}
+            badge={post.badge}
           />
         ))}
       </div>
