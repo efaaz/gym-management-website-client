@@ -5,25 +5,19 @@ import Swal from "sweetalert2";
 import Spinner from "../../../Common/Loading/Spinner";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 import { FaClock, FaStar } from "react-icons/fa";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const AdminTrainerDetails = () => {
   const { id } = useParams();
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState("");
 
   const fetchTrainerDetails = async (id) => {
-    const response = await axiosPublic.get(`/applied-trainers/${id}`);
-    return response.data;
-  };
-
-  const updateTrainerStatus = async ({ id, status, feedback }) => {
-    const response = await axiosPublic.put(`/update-trainer-status/${id}`, {
-      status,
-      feedback,
-    });
+    const response = await axiosSecure.get(`/applied-trainers/${id}`);
     return response.data;
   };
 
@@ -35,6 +29,16 @@ const AdminTrainerDetails = () => {
     queryKey: ["trainer", id],
     queryFn: () => fetchTrainerDetails(id),
   });
+
+  const updateTrainerStatus = async ({ id, status, feedback }) => {
+    const email = trainer.email; // Ensure email is only set when trainer data is available
+    const response = await axiosPublic.put(`/update-trainer-status/${id}`, {
+      status,
+      feedback,
+      email,
+    });
+    return response.data;
+  };
 
   const mutation = useMutation({
     mutationFn: updateTrainerStatus,

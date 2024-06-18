@@ -4,21 +4,23 @@ import Spinner from "../../../Common/Loading/Spinner";
 import avatar from "../../../../assets/Avatar/avatar.png";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 function AllTrainers() {
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const fetchAllTrainers = async (page) => {
-    const response = await axiosPublic.get(`/trainer`); // Replace with your API endpoint
+    const response = await axiosSecure.get(`/trainer`); // Replace with your API endpoint
     return response.data;
   };
 
-  const { data, error, isLoading, refetch  } = useQuery({
+  const { data, error, isLoading, refetch } = useQuery({
     queryKey: ["trainers"],
     queryFn: fetchAllTrainers,
   });
 
-  let updateRole = async(email) =>{
-    let userInfo = {email: email};
+  let updateRole = async (email) => {
+    let userInfo = { email: email };
     const response = await axiosPublic.patch(`/updaterole`, userInfo);
     console.log(response.status);
     if (response.status === 200) {
@@ -31,10 +33,9 @@ function AllTrainers() {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
-      refetch()
+      refetch();
     }
-    
-  }
+  };
 
   if (isLoading) return <Spinner></Spinner>;
   if (error) return <div>Error loading trainers</div>;

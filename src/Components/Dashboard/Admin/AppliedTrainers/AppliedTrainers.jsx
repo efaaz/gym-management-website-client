@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 
 
 const AppliedTrainers = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const fetchAppliedTrainers = async () => {
-    const response = await axiosPublic.get("/get-trainers");
+    const response = await axiosSecure.get("/get-trainers");
     return response.data;
   };
 

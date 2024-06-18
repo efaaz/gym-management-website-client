@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { FaEye } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const ActivityLog = () => {
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState("");
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
 
   const fetchActivityLog = async () => {
-    const response = await axiosPublic.get("/activity-log");
+    const response = await axiosSecure.get("/activity-log");
     return response.data;
   };
 

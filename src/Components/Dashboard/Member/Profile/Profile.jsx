@@ -3,10 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import Spinner from "../../../Common/Loading/Spinner";
-import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const Profile = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
+
   const { user, updateProfile, loading } = useAuth();
   const [name, setName] = useState(user.displayName || "");
   const [profilePicture, setProfilePicture] = useState(user.photoURL || "");
@@ -20,7 +21,7 @@ const Profile = () => {
   }, [user]);
 
   const fetchProfile = async () => {
-    const response = await axiosPublic.get(`/profile/${user.email}`);
+    const response = await axiosSecure.get(`/profile/${user.email}`);
     return response.data;
   };
 

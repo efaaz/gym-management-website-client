@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { LuArrowBigUp, LuArrowBigDown } from "react-icons/lu";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 function CommunityCard({
   title,
@@ -24,7 +25,17 @@ function CommunityCard({
 
   const handleUpVote = async () => {
     if (!user) {
-      alert("Please log in to vote.");
+      Swal.fire({
+        title: "Access denied",
+        text: "Please log in to vote!",
+        icon: "error",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
       return;
     }
 
@@ -38,7 +49,17 @@ function CommunityCard({
 
   const handleDownVote = async () => {
     if (!user) {
-      alert("Please log in to vote.");
+      Swal.fire({
+        title: "Access denied",
+        text: "Please log in to vote!",
+        icon: "error",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
       return;
     }
 

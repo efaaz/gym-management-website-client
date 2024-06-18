@@ -4,10 +4,10 @@ import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import Spinner from "../../../Common/Loading/Spinner";
 import { FaStar } from "react-icons/fa";
-import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const BookedTrainer = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { user } = useAuth(); // Get the current user info from AuthContext
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState("");
@@ -16,12 +16,12 @@ const BookedTrainer = () => {
   const name = user.displayName;
 
   const fetchBookedTrainerDetails = async (email) => {
-    const response = await axiosPublic.get(`/booked-trainer/${email}`);
+    const response = await axiosSecure.get(`/booked-trainer/${email}`);
     return response.data;
   };
 
   const fetchClassesAndSlots = async () => {
-    const response = await axiosPublic.get(`/trainer-classes-slots`);
+    const response = await axiosSecure.get(`/trainer-classes-slots`);
     return response.data;
   };
 
