@@ -11,7 +11,7 @@ const AboutSection = () => {
           <img
             src={aboutImage}
             alt="About Us"
-            className="rounded-lg shadow-lg w-[80%]"
+            className="rounded-lg shadow-lg mx-auto w-[80%]"
           />
         </div>
         <div className="lg:w-1/2 w-full">
